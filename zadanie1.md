@@ -13,8 +13,3 @@ docker image inspect local/zad1:v1
 docker login -u krystynakornas -p
 
 docker buildx build -f Dockerfile_z1 -t krystynakornas/zad1:v1 --platform linux/arm64,linux/amd64,linux/ppc64le,linux/arm/v7 --push .
-
-#link do Dockerhub
-#https://hub.docker.com/r/krystynakornas/zad1/tags
-
-
