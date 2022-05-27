@@ -1,0 +1,20 @@
+#!/bin/bash
+FROM alpine:latest
+MAINTAINER Krystyna Kornas <kornas.krystynaa@gmail.com>
+
+RUN apk --no-cache --update upgrade 
+
+RUN apk add openrc 
+
+RUN apk add apache2 php$phpverx-apache2
+
+COPY Zad1.php /var/www/localhost/htdocs/index.php
+RUN rm -rf /var/www/localhost/htdocs/index.html
+
+EXPOSE 81
+CMD ["-D", "FOREGROUND"]
+
+
+ENTRYPOINT ["/usr/sbin/httpd"]
+
+
